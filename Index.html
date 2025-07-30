@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hollow Page Society — Haunted Author Collective</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* quick inline fixes for tab nav and content visibility */
+    .tab-content { display: none; padding: 1rem 0; }
+    .tab-content.active { display: block; }
+    .tab-nav {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+    .tab-button {
+      background: #330000;
+      border: 2px solid #ff0033;
+      color: #ff0033;
+      padding: 0.6rem 1rem;
+      font-family: 'Cinzel Decorative', serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 6px;
+      user-select: none;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+    .tab-button:hover,
+    .tab-button.active {
+      background: #ff0033;
+      color: #220000;
+      box-shadow: 0 0 10px #ff0033, 0 0 20px #ff0055;
+      transform: scale(1.05);
+    }
+    a.button {
+      background: #ff0033;
+      color: #220000;
+      padding: 0.7rem 1.4rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-family: 'Cinzel Decorative', serif;
+      border-radius: 8px;
+      display: inline-block;
+      box-shadow: 0 0 15px #ff0033;
+      margin-top: 1rem;
+      letter-spacing: 0.15em;
+      transition: background 0.3s ease;
+    }
+    a.button:hover {
+      background: #ff4466;
+      box-shadow: 0 0 30px #ff6699;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -15,32 +64,27 @@
       <p>Welcome to the Hollow Page Society. Here, the words bleed, the stories haunt, and the sins never sleep.</p>
     </header>
 
-    <nav class="tab-nav">
-      <button class="tab-button" data-tab="memo">Memo</button>
-      <button class="tab-button" data-tab="blighted-throne">The Blighted Throne</button>
-      <button class="tab-button" data-tab="the-unwritten">The Unwritten</button>
-      <button class="tab-button" data-tab="beta-readers">Beta Readers</button>
-      <button class="tab-button" data-tab="personalized-stories">Personalized Stories</button>
+    <nav class="tab-nav" aria-label="Main navigation">
+      <button class="tab-button" data-tab="memo" aria-controls="memo" aria-selected="true">Memo</button>
+      <button class="tab-button" data-tab="blighted-throne" aria-controls="blighted-throne" aria-selected="false">The Blighted Throne</button>
+      <button class="tab-button" data-tab="the-unwritten" aria-controls="the-unwritten" aria-selected="false">The Unwritten</button>
+      <button class="tab-button" data-tab="beta-readers" aria-controls="beta-readers" aria-selected="false">Beta Readers</button>
+      <button class="tab-button" data-tab="personalized-stories" aria-controls="personalized-stories" aria-selected="false">Personalized Stories</button>
     </nav>
 
     <!-- Memo Section -->
-    <section id="memo" class="tab-content">
-      <h2>Latest Memo from the Mausoleum</h2>
-      <p>This is your dark little headquarters memo corner — where updates bleed in, words are cursed into place, and plans are whispered through coffin lids. Welcome home, scribe.</p>
-      <article class="memo-entry">
-        <h3>🕯️ Author Memo: August 13th — Something Unwritten Awakens...</h3>
-        <p><strong>Memo Date:</strong> 08.13</p>
-        <p><strong>Subject:</strong> <em>The Unwritten cracks open its first page</em></p>
-        <p>On August 13, the <em>prologue</em> of <strong>The Unwritten</strong> will be released here—etched into the code, whispered into the dark.</p>
-        <p>This marks the first unraveling. If you’ve been waiting to meet the manuscript that never wanted to stay dead, this is your invitation.</p>
-        <p><strong>Seraphin is watching. Anthony is slipping.</strong></p>
-        <p>Stay close. And read carefully—because what’s fiction today… may not be by morning.</p>
-        <p class="memo-signature">– A.B.</p>
-      </article>
+    <section id="memo" class="tab-content active" role="tabpanel" tabindex="0" aria-labelledby="memo-tab">
+      <h2>🕯️ We Are the Sins of Tomorrow — August 13 Release</h2>
+      <p>Mark your calendars. <strong>We Are the Sins of Tomorrow</strong> will release on <em>August 13</em> through Amazon:</p>
+      <p><a href="https://a.co/d/ifzpd4W" target="_blank" rel="noopener noreferrer" class="button">Preorder on Amazon</a></p>
+      <p>To celebrate this creeping milestone, the <strong>Prologue of The Unwritten</strong> will be released here on the site — free, sinister, and waiting to unravel your sanity.</p>
+      <p>Get ready to peer beyond the veil, as old stories awaken and new horrors take their first breath.</p>
+      <p><a href="https://docs.google.com/document/d/1c_0hcgsEU0zOIuLokKO0bHRVD4mwnIZ94RAhDnA3oXQ/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="button">Read The Unwritten Prologue Preview</a></p>
+      <p><strong>Seraphin watches... and the words bleed.</strong></p>
     </section>
 
     <!-- The Blighted Throne Section -->
-    <section id="blighted-throne" class="tab-content">
+    <section id="blighted-throne" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="blighted-throne-tab">
       <h2>The Blighted Throne — Book I: <em>Shadows Over Acheron</em></h2>
       <p><strong>Four souls. One decaying kingdom. A blight that consumes land... and soul.</strong></p>
       <p>Cosmic rot. Ancient sins. Four worlds dying in slow motion—and it’s only the beginning.</p>
@@ -76,21 +120,15 @@
 
       <p>If you like your fiction brutal, intimate, mythic, and laced with creeping fear that none of it is real — or worse — that it is, then pull up a chair. Just don’t get too comfortable.</p>
 
-      <div class="veil-link">
-        <h3>👁️ Glimpse Beyond the Veil</h3>
-        <p>Peer into the cursed beginnings — prologue and character introductions. Meet the damned before they rise.</p>
-        <a href="https://docs.google.com/document/d/1c_0hcgsEU0zOIuLokKO0bHRVD4mwnIZ94RAhDnA3oXQ/edit?usp=drivesdk" target="_blank" class="button" rel="noopener noreferrer">Read Preview</a>
-      </div>
+      <p><a href="https://docs.google.com/document/d/1c_0hcgsEU0zOIuLokKO0bHRVD4mwnIZ94RAhDnA3oXQ/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="button">Read Preview</a></p>
 
       <p class="reader-vibe">For fans of <strong>R. Scott Bakker</strong>, <strong>Mark Z. Danielewski</strong>, and <strong>China Miéville</strong> — but make no mistake, this haunted beast is entirely its own.</p>
 
-      <div class="amazon-link" style="margin-top: 2rem;">
-        <a href="https://a.co/d/ifzpd4W" target="_blank" class="button" rel="noopener noreferrer">Preorder "We Are the Sins of Tomorrow" — Releases August 13</a>
-      </div>
+      <p><a href="https://a.co/d/ifzpd4W" target="_blank" rel="noopener noreferrer" class="button">Preorder "We Are the Sins of Tomorrow"</a></p>
     </section>
 
     <!-- The Unwritten Section -->
-    <section id="the-unwritten" class="tab-content">
+    <section id="the-unwritten" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="the-unwritten-tab">
       <h2>The Unwritten — Spoiler-Free Analysis</h2>
       <p><strong>"The Unwritten"</strong> is a gripping psychological techno-thriller blending cosmic horror, metafiction, and urban fantasy.</p>
       <p>It follows Anthony Brower, a tormented author haunted by the success of his last novel and a rogue entity named Seraphin who escapes the page.</p>
@@ -126,7 +164,7 @@
     </section>
 
     <!-- Beta Readers Section -->
-    <section id="beta-readers" class="tab-content">
+    <section id="beta-readers" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="beta-readers-tab">
       <h2>Beta Readers Wanted</h2>
       <p>Want to dive deep into the abyss and help shape new tales of horror and despair? Join the beta reader circle.</p>
       <ul>
@@ -139,7 +177,7 @@
     </section>
 
     <!-- Personalized Stories Section -->
-    <section id="personalized-stories" class="tab-content">
+    <section id="personalized-stories" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="personalized-stories-tab">
       <h2>Personalized Story Requests</h2>
       <p>Want a creepy tale spun just for you or a loved one? Send your dark desires and watch them come alive in twisted prose.</p>
       <p>Fill out the request form on the site or email me directly for bespoke horrors and haunting romances.</p>
@@ -149,28 +187,32 @@
     <footer>
       &copy; 2025 Anthony Brower — All sins reserved.
     </footer>
-
   </div>
 
   <script>
-    // Tab navigation script
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
 
-    tabButtons.forEach(button => {
+    buttons.forEach(button => {
       button.addEventListener('click', () => {
-        const target = button.getAttribute('data-tab');
+        const tab = button.getAttribute('data-tab');
 
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
+        buttons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+
+        contents.forEach(content => content.classList.remove('active'));
 
         button.classList.add('active');
-        document.getElementById(target).classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+
+        document.getElementById(tab).classList.add('active');
       });
     });
 
-    // Activate the first tab on load
-    document.querySelector('.tab-button').click();
+    // Activate first tab by default
+    buttons[0].click();
   </script>
 </body>
 </html>
