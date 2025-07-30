@@ -2,34 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hollow Page Society</title>
-  <link rel="stylesheet" href="Style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hollow Page Society — Haunted Author Collective</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    /* Basic Reset & Body */
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #1a0000, #000000 70%);
+      color: #f8e8e8;
+      font-family: 'Cinzel Decorative', serif;
+      line-height: 1.6;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 2rem 3rem 2rem;
+      background: rgba(20, 0, 0, 0.85);
+      border-radius: 15px;
+      box-shadow:
+        0 0 20px 5px rgba(255, 0, 40, 0.4),
+        inset 0 0 30px 2px rgba(255, 0, 40, 0.6);
+    }
+    h1, h2 {
+      color: #ff0033;
+      text-shadow:
+        0 0 6px #ff0033,
+        0 0 12px #660000;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+    }
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 2px #440000;
+    }
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin: 3rem 0 4rem 0;
+      padding: 2rem;
+      border: 2px solid #ff0033;
+      border-radius: 15px;
+      background: rgba(30, 0, 0, 0.95);
+      box-shadow:
+        0 0 20px 4px #ff0033,
+        inset 0 0 15px 2px #660000;
+    }
+    .hero h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .amazon-link {
+      color: #ff0066;
+      text-decoration: none;
+      text-shadow:
+        0 0 8px #ff0066,
+        0 0 18px #ff0044;
+      transition: all 0.3s ease;
+    }
+    .amazon-link:hover {
+      color: #fff0f0;
+      text-shadow:
+        0 0 16px #ff4499,
+        0 0 32px #ff2255;
+      transform: scale(1.05);
+    }
+    /* Button */
+    .button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      background: #ff0033;
+      color: #000;
+      font-weight: 700;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow:
+        0 0 12px #ff0033,
+        inset 0 0 15px #660000;
+      transition: all 0.3s ease;
+      user-select: none;
+      letter-spacing: 0.15em;
+    }
+    .button:hover {
+      background: #ff3366;
+      box-shadow:
+        0 0 20px #ff6699,
+        inset 0 0 25px #cc0033;
+      color: #fff0f0;
+      transform: scale(1.07);
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #660000;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 5px #660000;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1 class="glow-text">The Hollow Page Society</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="Books.html">Books</a></li>
-        <li><a href="Memo.html">Memos</a></li>
-        <li><a href="Beta-reader.html">Beta Readers</a></li>
-        <li><a href="Personalized-Story-Requests.html">Custom Stories</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Hollow Page Society</h1>
+      <p>Welcome to the Hollow Page Society. Where the words bleed, the stories haunt, and the sins never sleep.</p>
+    </header>
 
-  <main>
     <section class="hero">
-      <h2>We Are the Sins of Tomorrow — Releasing August 13 on Amazon</h2>
-      <p>To commemorate the launch, we’re revealing the prologue to <strong>The Unwritten</strong> right here on the site. Prepare yourself—this is only the beginning...</p>
-      <a href="https://docs.google.com/document/d/1c_0hcgsEU0zOIuLokKO0bHRVD4mwnIZ94RAhDnA3oXQ/edit?usp=drivesdk" class="button" target="_blank">Read The Unwritten Prologue</a>
+      <h2>
+        <em>We Are the Sins of Tomorrow</em> — Releasing August 13 on 
+        <a href="https://a.co/d/ifzpd4W" target="_blank" rel="noopener noreferrer" class="amazon-link">Amazon</a>
+      </h2>
+      <p>
+        To celebrate the launch, we’re dropping the prologue to <strong>The Unwritten</strong> right here on the site. Brace yourself—it’s only the beginning…
+      </p>
+      <a href="https://docs.google.com/document/d/1c_0hcgsEU0zOIuLokKO0bHRVD4mwnIZ94RAhDnA3oXQ/edit?usp=drivesdk" 
+         class="button" target="_blank" rel="noopener noreferrer">
+        Read The Unwritten Prologue
+      </a>
     </section>
-  </main>
 
-  <footer>
-    <p>Made with candlelight, shadows, and cursed typewriters.</p>
-    <p>© 2025 The Hollow Page Society</p>
-  </footer>
+    <footer>
+      &copy; 2025 Anthony Brower — All sins reserved.
+    </footer>
+  </div>
 </body>
 </html>
