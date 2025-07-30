@@ -1,4 +1,4 @@
-/* === BODY & LAYOUT === */
+/* Base body styling */
 body {
   margin: 0;
   background: linear-gradient(135deg, #1a0000, #000000 70%);
@@ -7,12 +7,15 @@ body {
   line-height: 1.6;
   padding: 2rem;
   min-height: 100vh;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Container to center and hold content */
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 2rem 3rem;
   background: rgba(20, 0, 0, 0.85);
   border-radius: 15px;
   box-shadow:
@@ -20,7 +23,7 @@ body {
     inset 0 0 30px 2px rgba(255, 0, 40, 0.6);
 }
 
-/* === HEADERS === */
+/* Headings style */
 h1, h2, h3 {
   color: #ff0033;
   text-shadow:
@@ -29,35 +32,37 @@ h1, h2, h3 {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   letter-spacing: 0.1em;
+  user-select: text;
 }
 
-/* === PARAGRAPHS & LISTS === */
+/* Paragraph and list items */
 p, li {
   font-size: 1.15rem;
   margin-bottom: 1rem;
   text-shadow: 0 0 2px #440000;
+  user-select: text;
 }
 
+/* Lists styling */
 ul {
-  padding-left: 1.2rem;
+  padding-left: 1.4rem;
   margin-bottom: 1.5rem;
+  user-select: text;
 }
 
-/* === LINKS === */
+/* Links styling */
 a {
   color: #ff0033;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
-
 a:hover, a:focus {
-  color: #ff6666;
-  text-decoration: none;
-  text-shadow: 0 0 8px #ff0033;
-  cursor: pointer;
+  color: #ff6699;
+  text-shadow: 0 0 8px #ff0044;
+  outline: none;
 }
 
-/* === FLICKERING BUTTON-LIKE LINKS === */
+/* Special flicker link block styling */
 .sins-link {
   text-align: center;
   margin: 3rem 0 2rem 0;
@@ -88,7 +93,6 @@ a:hover, a:focus {
   user-select: none;
   letter-spacing: 0.15em;
 }
-
 .flicker-link:hover {
   color: #fff0f0;
   background: rgba(255, 0, 50, 0.3);
@@ -113,7 +117,6 @@ a:hover, a:focus {
     filter: none;
   }
 }
-
 @keyframes flickerSinHover {
   0%, 20%, 40%, 60%, 80%, 100% {
     opacity: 1;
@@ -125,6 +128,7 @@ a:hover, a:focus {
   }
 }
 
+/* Ambient glow behind the flicker link */
 .sins-link::before {
   content: '';
   position: absolute;
@@ -139,7 +143,7 @@ a:hover, a:focus {
   pointer-events: none;
 }
 
-/* === FOOTER === */
+/* Footer styling */
 footer {
   text-align: center;
   color: #660000;
@@ -147,4 +151,117 @@ footer {
   margin-top: 3rem;
   letter-spacing: 0.1em;
   text-shadow: 0 0 5px #660000;
+  user-select: none;
+}
+
+/* Forms - labels and inputs */
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #ff0033;
+  text-shadow: 0 0 6px #660000;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #ff0033;
+  border-radius: 10px;
+  background: #1a0000;
+  color: #ffcccc;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  box-shadow:
+    inset 0 0 10px #660000;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff6699;
+  outline: none;
+  box-shadow:
+    0 0 10px #ff0033,
+    inset 0 0 12px #ff6699;
+}
+
+/* Submit button */
+.submit-button {
+  background: #ff0033;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow:
+    0 0 15px #ff0033,
+    inset 0 0 10px #ff6699;
+  transition: background 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+  background: #ff6699;
+  box-shadow:
+    0 0 25px #ff6699,
+    inset 0 0 12px #ffccdd;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Utility classes for text */
+.italic {
+  font-style: italic;
+}
+
+/* Scrollbar styling for textarea */
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: #ff0033 #1a0000;
+}
+
+textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: #1a0000;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #ff0033;
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  .container {
+    padding: 1rem 1rem 2rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .flicker-link {
+    font-size: 1.8rem;
+    padding: 0.6rem 1.5rem;
+  }
 }
