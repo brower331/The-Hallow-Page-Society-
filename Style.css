@@ -1,4 +1,4 @@
-/* ===== Base & Body ===== */
+/* ===== Body & Background ===== */
 body {
   margin: 0;
   background: linear-gradient(135deg, #1a0000, #000000 70%);
@@ -142,7 +142,6 @@ a:focus {
   animation: flickerSinHover 1.5s infinite;
 }
 
-/* Flicker keyframes */
 @keyframes flickerSin {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
     opacity: 1;
