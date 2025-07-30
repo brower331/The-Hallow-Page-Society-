@@ -1,94 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hollow Page Society — Haunted Author Collective</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hollow Page Society</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1 class="drip-text">Hollow Page Society</h1>
-      <p>Where every word is a whisper from the dark...</p>
-    </header>
-
-    <nav class="tab-nav" role="tablist" aria-label="Main Navigation">
-      <button class="tab-button active" data-tab="memo" role="tab" aria-selected="true" aria-controls="memo" id="tab-memo">Memo</button>
-      <button class="tab-button" data-tab="blighted-throne" role="tab" aria-selected="false" aria-controls="blighted-throne" id="tab-blighted">The Blighted Throne</button>
-      <button class="tab-button" data-tab="the-unwritten" role="tab" aria-selected="false" aria-controls="the-unwritten" id="tab-unwritten">The Unwritten</button>
-      <button class="tab-button" data-tab="beta-readers" role="tab" aria-selected="false" aria-controls="beta-readers" id="tab-beta">Beta Readers</button>
+  <header>
+    <h1 class="drip-text">Hollow Page Society</h1>
+    <p class="tagline">Creepy tales, twisted futures, and haunted whispers from beyond...</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="memos.html">Memos</a>
+      <a href="stories.html">Request a Story</a>
     </nav>
-
-    <section id="memo" class="tab-content active" role="tabpanel" aria-labelledby="tab-memo">
-      <h2 class="drip-heading">Memo from the Mausoleum</h2>
-      <p> 🕯️ We Are the Sins of Tomorrow — releasing August 13 on Amazon.
-To commemorate the descent, the prologue to The Unwritten will be released free to read on the site.
-
-📖 One book for your shelf. One haunting for your soul.
-Welcome to The Hollow Page Society. We hope you don’t make it out.
+  </header>  <main>
+    <section class="announcement">
+      <h2>🎉 Book Release Celebration 🎉</h2>
+      <p>
+        Our debut novel <strong>"We Are the Sins of Tomorrow"</strong> releases on <strong>August 13th</strong> on Amazon!<br>
+        To commemorate, the prologue of <em>The Unwritten</em> will go live on this site that same day.
       </p>
-    </section>
+    </section><section class="intro">
+  <h2>Enter the Hollow...</h2>
+  <p>Welcome to your favorite haunted hideout for fiction. Browse our growing library of eerie epics, leave requests for personalized tales, or beta read new nightmares in the making.</p>
+</section>
 
-    <section id="blighted-throne" class="tab-content" role="tabpanel" aria-labelledby="tab-blighted">
-      <h2 class="drip-heading">The Blighted Throne</h2>
-      <p>Four souls. One decaying kingdom. A blight that doesn’t just consume the land… it consumes the soul. Dive into the lore, the pain, and the corrupt beauty of your flagship book.</p>
-      <p>For a spoiler-free glimpse into the prologue and character introductions, <a class="flicker-link" href="https://docs.google.com/document/d/1c_0hcgsEU0zOIuLokKO0bHRVD4mwnIZ94RAhDnA3oXQ/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer">peek beyond the veil here</a>.</p>
-    </section>
+<section class="newsletter">
+  <h2>Join the Coven</h2>
+  <p>Subscribe for memos from the mausoleum, new releases, and exclusive peeks into the veiled works.</p>
+  <form action="https://formspree.io/f/moqgrqqv" method="POST">
+    <input type="email" name="email" placeholder="Your email" required>
+    <button type="submit">Haunt Me</button>
+  </form>
+</section>
 
-    <section id="the-unwritten" class="tab-content" role="tabpanel" aria-labelledby="tab-unwritten">
-      <h2 class="drip-heading">The Unwritten</h2>
-      <p>A layered horror of memory, identity, and metaphysical gaslighting. The prologue is coming soon. Stay tuned for a descent into madness where the lines between author and creation blur.</p>
-    </section>
-
-    <section id="beta-readers" class="tab-content" role="tabpanel" aria-labelledby="tab-beta">
-      <h2 class="drip-heading">Beta Readers Wanted</h2>
-      <p>Want to dive deep into the abyss and help shape new tales of horror and despair? Join the beta reader circle.</p>
-      <ul>
-        <li>Exclusive early chapters (More coming!)</li>
-        <li>Behind-the-scenes notes (Coming soon)</li>
-        <li>Direct feedback channels (Coming soon)</li>
-      </ul>
-      <p>To sign up, contact <a href="mailto:Anthony.brower.books@gmail.com" target="_blank" rel="noopener noreferrer">👻 Anthony.brower.books@gmail.com</a></p>
-    </section>
-
-    <section class="sins-link">
-      <a href="https://a.co/d/5aLlaGj" class="flicker-link" target="_blank" rel="noopener noreferrer" aria-label="We Are the Sins of Tomorrow">
-        We Are the Sins of Tomorrow — Preorders available now, out August 13!
-      </a>
-    </section>
-
-    <footer>
-      &copy; 2025 Anthony Brower — All sins reserved.
-    </footer>
-  </div>
-
-  <!-- Creepy ambient music, looping and autoplay -->
-  <audio id="creepy-music" autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/07/26/audio_1234567890.mp3?filename=spooky-ambient-112.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
+<section class="music">
+  <h2>Atmosphere</h2>
+  <audio autoplay loop>
+    <source src="haunted-theme.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
   </audio>
+  <p><em>(Cursed melodies may or may not summon things.)</em></p>
+</section>
 
-  <script>
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const target = button.getAttribute('data-tab');
-
-        tabButtons.forEach(btn => {
-          btn.classList.remove('active');
-          btn.setAttribute('aria-selected', 'false');
-        });
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        button.classList.add('active');
-        button.setAttribute('aria-selected', 'true');
-        document.getElementById(target).classList.add('active');
-      });
-    });
-  </script>
+  </main>  <footer>
+    <p>&copy; 2025 Anthony Brower | Haunted words for haunted hearts.</p>
+  </footer>
 </body>
 </html>
