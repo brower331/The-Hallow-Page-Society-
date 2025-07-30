@@ -3,44 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Request a Story — Hollow Page Society</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Personalized Story Requests — Hollow Page Society</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1 class="glow-text">📜 Whisper Me a Tale</h1>
-    <p>You speak, I scribe. Darkness made to order.</p>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Personalized Story Requests</h1>
+      <p>Have a dark desire? Need a tale spun just for you or a cursed loved one? Here’s where you whisper your story requests into the void. I’ll be watching, waiting, and writing the shadows into reality.</p>
+    </header>
 
-  <nav class="nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="books.html">Books</a></li>
-      <li><a href="beta-readers.html">Beta Readers</a></li>
-      <li><a href="request-story.html">Request a Story</a></li>
-      <li><a href="memos.html">Memos</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section>
-      <h2>Need Something… Specific?</h2>
-      <p>Want a short horror piece featuring your favorite fears? A romance blooming in a plague-drenched dystopia? A fantasy tale forged from your dreams—or nightmares?</p>
-
-      <p>I write custom stories for:</p>
+    <section id="request-info">
+      <h2>How It Works</h2>
+      <p>You submit your request. It can be horror, sci-fi, romance with a touch of the macabre—whatever your twisted heart desires.</p>
       <ul>
-        <li>🖤 You or a loved one</li>
-        <li>🎂 Birthdays, grief gifts, or strange holidays</li>
-        <li>🪦 Characters that look like you</li>
-        <li>🪡 Anything else your cursed little heart desires</li>
+        <li><strong>Originality guaranteed:</strong> No copy-paste garbage here. Every tale is born from the dark corners of my mind and yours.</li>
+        <li><strong>Length & scope:</strong> Mini stories, full chapters, or even episodic glimpses. Tell me what you want.</li>
+        <li><strong>Deadlines:</strong> I’m cursed with a hectic schedule, but I’ll always keep you updated.</li>
+        <li><strong>Pricing:</strong> This is bespoke art, not cheap thrills. Pricing details will be discussed privately.</li>
       </ul>
-
-      <p>
-        👉 <a href="mailto:Anthony.brower.books@gmail.com?subject=Custom%20Story%20Request&body=Hi%20Anthony,%0D%0AI'd%20like%20to%20request%20a%20story.%20Here%20are%20some%20details%3A%0D%0A">Email me your request</a><br />
-        or summon me on Discord if you’re already part of the coven.
-      </p>
     </section>
-  </main>
+
+    <section id="request-form">
+      <h2>Request a Story</h2>
+      <form action="mailto:Anthony.brower.books@gmail.com" method="POST" enctype="text/plain" class="request-form">
+        <label for="name">Your Name or Alias:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="email">Your Email Address:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="story-type">Type of Story You Want:</label><br />
+        <select id="story-type" name="story-type" required>
+          <option value="">Select a genre</option>
+          <option value="horror">Horror</option>
+          <option value="sci-fi">Sci-Fi</option>
+          <option value="romance">Romance</option>
+          <option value="dark-fantasy">Dark Fantasy</option>
+          <option value="other">Other / Mix</option>
+        </select><br /><br />
+
+        <label for="details">Your Story Details & Special Requests:</label><br />
+        <textarea id="details" name="details" rows="6" placeholder="Spill your darkest secrets here..." required></textarea><br /><br />
+
+        <button type="submit" class="submit-button">Send Your Request into the Abyss</button>
+      </form>
+    </section>
+
+    <footer>
+      &copy; 2025 Anthony Brower — Every request answered with blood and ink.
+    </footer>
+  </div>
 </body>
 </html>
