@@ -1,31 +1,30 @@
-/* ===== Body & Background ===== */
+/* ===== Hollow Page Society Style.css ===== */
+
+/* Body & background */
 body {
   margin: 0;
   background: linear-gradient(135deg, #1a0000, #000000 70%);
   color: #f8e8e8;
   font-family: 'Cinzel Decorative', serif;
   line-height: 1.6;
-  padding: 2rem;
   min-height: 100vh;
   overflow-x: hidden;
-  position: relative;
 }
 
-/* ===== Container ===== */
+/* Container to center and pad content */
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1rem 2rem 4rem;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
   background: rgba(20, 0, 0, 0.85);
   border-radius: 15px;
   box-shadow:
     0 0 20px 5px rgba(255, 0, 40, 0.4),
     inset 0 0 30px 2px rgba(255, 0, 40, 0.6);
-  position: relative;
-  z-index: 10;
 }
 
-/* ===== Headings ===== */
+/* Headings with dripping glow */
 h1, h2, h3 {
   color: #ff0033;
   text-shadow:
@@ -34,76 +33,49 @@ h1, h2, h3 {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   letter-spacing: 0.1em;
-  font-weight: 900;
   position: relative;
+  animation: dripGlow 3s infinite alternate;
 }
 
-/* Dripping blood text effect */
-.drip-text {
-  position: relative;
-  color: #ff0033;
-  text-shadow:
-    0 0 6px #ff0033,
-    0 0 12px #660000;
-}
-
-.drip-text::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 15px;
-  background: #ff0033;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50% 50% 60% 60%;
-  animation: drip 2s infinite ease-in-out;
-  box-shadow:
-    0 20px 0 #ff0033,
-    4px 30px 0 #99001a,
-    -4px 30px 0 #99001a;
-  filter: blur(0.5px);
-}
-
-@keyframes drip {
+/* Drip glow flicker animation */
+@keyframes dripGlow {
   0%, 100% {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+    text-shadow:
+      0 0 8px #ff0044,
+      0 0 20px #ff0044,
+      0 0 30px #660000,
+      0 5px 15px #330000;
   }
   50% {
-    transform: translateX(-50%) translateY(10px);
-    opacity: 0.6;
+    text-shadow:
+      0 0 15px #ff0066,
+      0 0 30px #ff0066,
+      0 0 40px #ff0000,
+      0 5px 20px #660000;
   }
 }
 
-/* ===== Paragraphs & Lists ===== */
+/* Paragraphs and lists */
 p, li {
   font-size: 1.15rem;
   margin-bottom: 1rem;
   text-shadow: 0 0 2px #440000;
 }
 
-/* ===== Links ===== */
-a {
-  color: #ff0033;
-  text-decoration: underline;
+/* Lists */
+ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Flickering link effect */
+.sins-link {
+  text-align: center;
+  margin: 3rem 0 2rem 0;
   position: relative;
-  transition: all 0.3s ease;
-  user-select: none;
+  z-index: 10;
 }
 
-a:hover,
-a:focus {
-  color: #fff0f0;
-  text-shadow:
-    0 0 12px #ff0044,
-    0 0 24px #ff0044,
-    0 0 36px #ff0044;
-  transform: scale(1.05);
-  outline: none;
-}
-
-/* Flickering cursed links */
 .flicker-link {
   font-size: 2.5rem;
   color: #ff0033;
@@ -122,10 +94,10 @@ a:focus {
   border: 2px solid #660000;
   background: rgba(0, 0, 0, 0.65);
   border-radius: 12px;
-  cursor: pointer;
-  letter-spacing: 0.15em;
-  user-select: none;
   transition: all 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: 0.15em;
 }
 
 .flicker-link:hover {
@@ -164,14 +136,7 @@ a:focus {
   }
 }
 
-/* ===== Sections ===== */
-.sins-link {
-  text-align: center;
-  margin: 3rem 0 2rem 0;
-  position: relative;
-  z-index: 10;
-}
-
+/* Ambient glow behind flicker link */
 .sins-link::before {
   content: '';
   position: absolute;
@@ -186,7 +151,7 @@ a:focus {
   pointer-events: none;
 }
 
-/* ===== Footer ===== */
+/* Footer */
 footer {
   text-align: center;
   color: #660000;
@@ -194,87 +159,100 @@ footer {
   margin-top: 3rem;
   letter-spacing: 0.1em;
   text-shadow: 0 0 5px #660000;
-  user-select: none;
 }
 
-/* ===== Animations for fade-in ===== */
+/* Link styling */
+a {
+  color: #ff0033;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff3366;
+  text-shadow: 0 0 6px #ff6699;
+}
+
+/* Headings glitch effect (optional) */
+.glitch-title {
+  position: relative;
+  color: #ff0033;
+  font-weight: 900;
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 red, -2px 0 cyan;
+  }
+  20% {
+    text-shadow: -2px 0 red, 2px 0 cyan;
+  }
+  40% {
+    text-shadow: 2px 2px red, -2px -2px cyan;
+  }
+  60% {
+    text-shadow: -2px -2px red, 2px 2px cyan;
+  }
+  80% {
+    text-shadow: 2px -2px red, -2px 2px cyan;
+  }
+  100% {
+    text-shadow: -2px 0 red, 2px 0 cyan;
+  }
+}
+
+/* Optional: dripping blood animation for headings */
+.drip {
+  position: relative;
+  display: inline-block;
+  color: #ff0033;
+  animation: dripBlood 3s infinite;
+}
+
+@keyframes dripBlood {
+  0%, 100% {
+    text-shadow:
+      0 0 6px #ff0033,
+      0 0 12px #660000;
+  }
+  50% {
+    text-shadow:
+      0 0 20px #ff0000,
+      0 10px 15px #660000;
+  }
+}
+
+/* Add some spacing to sections */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Smooth fade-in for content on load */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Tab Navigation Styles ===== */
-nav.tab-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem auto;
-  flex-wrap: wrap;
-  user-select: none;
+/* Add the fade-in to main container */
+.container {
+  animation: fadeIn 1s ease forwards;
 }
 
-.tab-button {
-  background: #1a0000;
-  color: #ff0033;
-  border: 2px solid #ff0033;
-  padding: 0.6rem 1.5rem;
+/* ===== Creepy Background Audio Player ===== */
+
+audio#background-music {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 220px;
+  background: rgba(20,0,0,0.7);
+  border: 1px solid #ff0033;
   border-radius: 12px;
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 1rem;
+  outline: none;
+  box-shadow:
+    0 0 10px #ff0033;
+  filter: drop-shadow(0 0 8px #ff0033);
+  z-index: 9999;
   cursor: pointer;
-  text-shadow: 0 0 4px #ff0033;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.tab-button:hover,
-.tab-button.active {
-  background: #ff0033;
-  color: #000;
-  text-shadow: 0 0 6px #000;
-  border-color: #fff;
-}
-
-/* Tab content */
-.tab-content {
-  display: none;
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-  animation: fadeIn 0.4s ease;
-  user-select: text;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* ===== Glow text for spooky emphasis ===== */
-.glow-text {
-  color: #ff0033;
-  text-shadow:
-    0 0 8px #ff0033,
-    0 0 20px #ff0033,
-    0 0 40px #ff0022;
-}
-
-/* ===== Drip effect for special headings ===== */
-.drip-heading {
-  position: relative;
-  display: inline-block;
-  color: #ff0033;
-  text-shadow:
-    0 0 6px #ff0033,
-    0 0 12px #660000;
-  animation: drip 3s infinite ease-in-out;
-}
-
-/* ===== Helper classes ===== */
-.hidden {
-  display: none !important;
-}
-
-/* ===== Audio player - hidden ===== */
-audio#creepy-music {
-  display: none;
 }
