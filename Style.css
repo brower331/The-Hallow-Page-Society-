@@ -1,258 +1,184 @@
-/* ===== Hollow Page Society Style.css ===== */
-
-/* Body & background */
+/* ========== BODY & LAYOUT ========== */
 body {
   margin: 0;
-  background: linear-gradient(135deg, #1a0000, #000000 70%);
+  background: linear-gradient(135deg, #1a0000, #000000 80%);
   color: #f8e8e8;
   font-family: 'Cinzel Decorative', serif;
-  line-height: 1.6;
+  line-height: 1.7;
   min-height: 100vh;
-  overflow-x: hidden;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* Container to center and pad content */
 .container {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  box-sizing: border-box;
+  width: 100%;
   background: rgba(20, 0, 0, 0.85);
+  padding: 2rem 3rem 3rem 3rem;
   border-radius: 15px;
   box-shadow:
-    0 0 20px 5px rgba(255, 0, 40, 0.4),
-    inset 0 0 30px 2px rgba(255, 0, 40, 0.6);
+    0 0 30px 8px rgba(255, 0, 40, 0.6),
+    inset 0 0 40px 6px rgba(255, 0, 40, 0.7);
+  border: 1px solid #660000;
+  box-sizing: border-box;
 }
 
-/* Headings with dripping glow */
-h1, h2, h3 {
+/* ========== HEADINGS ========== */
+h1, h2 {
   color: #ff0033;
   text-shadow:
-    0 0 6px #ff0033,
-    0 0 12px #660000;
+    0 0 10px #ff0033,
+    0 0 20px #660000,
+    0 0 30px #ff3366;
   margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.1em;
-  position: relative;
-  animation: dripGlow 3s infinite alternate;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
 }
 
-/* Drip glow flicker animation */
-@keyframes dripGlow {
+/* Slight flicker animation on main headings */
+h1, h2 {
+  animation: flickerGlow 4s infinite alternate;
+}
+
+@keyframes flickerGlow {
   0%, 100% {
     text-shadow:
-      0 0 8px #ff0044,
-      0 0 20px #ff0044,
-      0 0 30px #660000,
-      0 5px 15px #330000;
+      0 0 10px #ff0033,
+      0 0 20px #660000,
+      0 0 30px #ff3366;
   }
   50% {
     text-shadow:
-      0 0 15px #ff0066,
-      0 0 30px #ff0066,
-      0 0 40px #ff0000,
-      0 5px 20px #660000;
+      0 0 14px #ff0055,
+      0 0 25px #bb0033,
+      0 0 45px #ff6699;
   }
 }
 
-/* Paragraphs and lists */
+/* ========== PARAGRAPHS & LISTS ========== */
 p, li {
   font-size: 1.15rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 2px #440000;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 4px #440000;
+  color: #f2dede;
 }
 
-/* Lists */
 ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* Flickering link effect */
-.sins-link {
-  text-align: center;
-  margin: 3rem 0 2rem 0;
+/* ========== LINKS ========== */
+a {
+  color: #ff0044;
+  text-decoration: underline wavy #ff3366;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
   position: relative;
+  user-select: none;
+}
+
+a:hover {
+  color: #fff0f0;
+  text-shadow:
+    0 0 15px #ff6699,
+    0 0 35px #ff3366;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  background: rgba(40, 0, 0, 0.9);
+  border-radius: 15px;
+  padding: 2rem 3rem;
+  margin: 3rem 0 4rem 0;
+  box-shadow:
+    0 0 30px 8px #ff0033,
+    inset 0 0 25px 6px #660000;
+  border: 1px solid #cc0033;
+  text-align: center;
+  user-select: none;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 12px #ff0044,
+    0 0 25px #cc0022;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
+  font-style: italic;
+  color: #ffccd1;
+  text-shadow: 0 0 6px #660000;
+}
+
+/* ========== BUTTONS ========== */
+.button {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: linear-gradient(135deg, #ff0033, #cc0022);
+  color: #000;
+  border-radius: 16px;
+  box-shadow:
+    0 0 20px 4px #ff0033,
+    inset 0 0 25px 6px #660000;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #ff3366, #ff0011);
+  color: #fff0f0;
+  box-shadow:
+    0 0 30px 6px #ff6699,
+    inset 0 0 35px 8px #cc0033;
+  transform: scale(1.07);
+  text-shadow:
+    0 0 12px #ff77aa;
   z-index: 10;
 }
 
-.flicker-link {
-  font-size: 2.5rem;
-  color: #ff0033;
-  text-shadow:
-    0 0 8px #ff0033,
-    0 0 20px #ff0033,
-    0 0 30px #ff0033,
-    0 0 40px #ff0033,
-    0 0 50px #660000,
-    0 0 60px #660000,
-    0 0 70px #660000;
-  animation: flickerSin 2.5s infinite;
-  text-decoration: none;
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  border: 2px solid #660000;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  user-select: none;
-  letter-spacing: 0.15em;
-}
-
-.flicker-link:hover {
-  color: #fff0f0;
-  background: rgba(255, 0, 50, 0.3);
-  border-color: #ff0044;
-  text-shadow:
-    0 0 12px #ff0044,
-    0 0 24px #ff0044,
-    0 0 36px #ff0044,
-    0 0 48px #ff0022,
-    0 0 60px #ff0022;
-  transform: scale(1.05) rotate(-1deg);
-  animation: flickerSinHover 1.5s infinite;
-}
-
-@keyframes flickerSin {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    opacity: 1;
-    filter: drop-shadow(0 0 6px #ff0033);
-  }
-  20%, 24%, 55% {
-    opacity: 0.4;
-    filter: none;
-  }
-}
-
-@keyframes flickerSinHover {
-  0%, 20%, 40%, 60%, 80%, 100% {
-    opacity: 1;
-    filter: drop-shadow(0 0 10px #ff0066);
-  }
-  10%, 30%, 50%, 70%, 90% {
-    opacity: 0.6;
-    filter: none;
-  }
-}
-
-/* Ambient glow behind flicker link */
-.sins-link::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle at center, rgba(255, 0, 50, 0.25), transparent 70%);
-  filter: blur(30px);
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Footer */
+/* ========== FOOTER ========== */
 footer {
   text-align: center;
   color: #660000;
   font-size: 0.9rem;
-  margin-top: 3rem;
+  margin-top: 5rem;
   letter-spacing: 0.1em;
-  text-shadow: 0 0 5px #660000;
+  text-shadow: 0 0 8px #660000;
+  user-select: none;
 }
 
-/* Link styling */
-a {
-  color: #ff0033;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #ff3366;
-  text-shadow: 0 0 6px #ff6699;
-}
-
-/* Headings glitch effect (optional) */
-.glitch-title {
-  position: relative;
-  color: #ff0033;
-  font-weight: 900;
-  animation: glitch 2s infinite;
-}
-
-@keyframes glitch {
-  0% {
-    text-shadow: 2px 0 red, -2px 0 cyan;
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
   }
-  20% {
-    text-shadow: -2px 0 red, 2px 0 cyan;
+  .hero h2 {
+    font-size: 1.9rem;
   }
-  40% {
-    text-shadow: 2px 2px red, -2px -2px cyan;
+  .button {
+    font-size: 1.1rem;
+    padding: 0.7rem 2rem;
   }
-  60% {
-    text-shadow: -2px -2px red, 2px 2px cyan;
-  }
-  80% {
-    text-shadow: 2px -2px red, -2px 2px cyan;
-  }
-  100% {
-    text-shadow: -2px 0 red, 2px 0 cyan;
-  }
-}
-
-/* Optional: dripping blood animation for headings */
-.drip {
-  position: relative;
-  display: inline-block;
-  color: #ff0033;
-  animation: dripBlood 3s infinite;
-}
-
-@keyframes dripBlood {
-  0%, 100% {
-    text-shadow:
-      0 0 6px #ff0033,
-      0 0 12px #660000;
-  }
-  50% {
-    text-shadow:
-      0 0 20px #ff0000,
-      0 10px 15px #660000;
-  }
-}
-
-/* Add some spacing to sections */
-section {
-  margin-bottom: 2rem;
-}
-
-/* Smooth fade-in for content on load */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Add the fade-in to main container */
-.container {
-  animation: fadeIn 1s ease forwards;
-}
-
-/* ===== Creepy Background Audio Player ===== */
-
-audio#background-music {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 220px;
-  background: rgba(20,0,0,0.7);
-  border: 1px solid #ff0033;
-  border-radius: 12px;
-  outline: none;
-  box-shadow:
-    0 0 10px #ff0033;
-  filter: drop-shadow(0 0 8px #ff0033);
-  z-index: 9999;
-  cursor: pointer;
 }
