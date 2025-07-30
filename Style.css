@@ -1,0 +1,150 @@
+/* === BODY & LAYOUT === */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1a0000, #000000 70%);
+  color: #f8e8e8;
+  font-family: 'Cinzel Decorative', serif;
+  line-height: 1.6;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: rgba(20, 0, 0, 0.85);
+  border-radius: 15px;
+  box-shadow:
+    0 0 20px 5px rgba(255, 0, 40, 0.4),
+    inset 0 0 30px 2px rgba(255, 0, 40, 0.6);
+}
+
+/* === HEADERS === */
+h1, h2, h3 {
+  color: #ff0033;
+  text-shadow:
+    0 0 6px #ff0033,
+    0 0 12px #660000;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+/* === PARAGRAPHS & LISTS === */
+p, li {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 2px #440000;
+}
+
+ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === LINKS === */
+a {
+  color: #ff0033;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: #ff6666;
+  text-decoration: none;
+  text-shadow: 0 0 8px #ff0033;
+  cursor: pointer;
+}
+
+/* === FLICKERING BUTTON-LIKE LINKS === */
+.sins-link {
+  text-align: center;
+  margin: 3rem 0 2rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.flicker-link {
+  font-size: 2.5rem;
+  color: #ff0033;
+  text-shadow:
+    0 0 8px #ff0033,
+    0 0 20px #ff0033,
+    0 0 30px #ff0033,
+    0 0 40px #ff0033,
+    0 0 50px #660000,
+    0 0 60px #660000,
+    0 0 70px #660000;
+  animation: flickerSin 2.5s infinite;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 2px solid #660000;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: 0.15em;
+}
+
+.flicker-link:hover {
+  color: #fff0f0;
+  background: rgba(255, 0, 50, 0.3);
+  border-color: #ff0044;
+  text-shadow:
+    0 0 12px #ff0044,
+    0 0 24px #ff0044,
+    0 0 36px #ff0044,
+    0 0 48px #ff0022,
+    0 0 60px #ff0022;
+  transform: scale(1.05) rotate(-1deg);
+  animation: flickerSinHover 1.5s infinite;
+}
+
+@keyframes flickerSin {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px #ff0033);
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+    filter: none;
+  }
+}
+
+@keyframes flickerSinHover {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #ff0066);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    opacity: 0.6;
+    filter: none;
+  }
+}
+
+.sins-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at center, rgba(255, 0, 50, 0.25), transparent 70%);
+  filter: blur(30px);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  color: #660000;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 5px #660000;
+}
